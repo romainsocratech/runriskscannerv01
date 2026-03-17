@@ -1,22 +1,87 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>RUNRISK Scanner</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>RUN Risk Scanner</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f5f7fa;
+margin:0;
+padding:0;
+}
+
+.container{
+width:600px;
+margin:120px auto;
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+h1{
+margin-bottom:10px;
+}
+
+p{
+color:#555;
+}
+
+input{
+width:90%;
+padding:12px;
+margin-top:20px;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+button{
+margin-top:20px;
+padding:12px 25px;
+background:#0066ff;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0052cc;
+}
+
+.result{
+margin-top:20px;
+color:#333;
+font-size:14px;
+}
+
+</style>
 </head>
 
 <body>
 
-<h1>RUNRISK Scanner</h1>
+<div class="container">
 
-<p>Analyse structurelle de votre projet Git</p>
+<h1>RUN Risk Scanner</h1>
 
-<input id="repo" placeholder="Collez l'adresse du projet Git">
+<p>Analyse structurelle de votre repository Git</p>
 
-<button onclick="scan()">Analyser</button>
+<input id="repo" placeholder="https://github.com/...">
 
-<pre id="result"></pre>
+<br>
+
+<button onclick="scan()">Lancer l'analyse</button>
+
+<div class="result" id="result"></div>
+
+</div>
 
 <script>
 
@@ -24,14 +89,13 @@ function scan(){
 
 let repo = document.getElementById("repo").value
 
-document.getElementById("result").textContent =
-"Analyse du repository : " + repo +
-"\n\nAnalyse en cours...\nRésultat sous 24h."
+document.getElementById("result").innerText =
+"Analyse du repository : "+repo+"\n\nAnalyse en cours.\nRésultat envoyé sous 24h."
 
 }
-
 
 </script>
 
 </body>
+
 </html>
