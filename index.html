@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>RUNRISK Scanner</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>RUNRISK Scanner</h1>
+
+<p>Analyse structurelle de votre projet Git</p>
+
+<input id="repo" placeholder="Collez l'adresse du projet Git">
+
+<button onclick="scan()">Analyser</button>
+
+<pre id="result"></pre>
+
+<script>
+
+function scan(){
+
+let repo = document.getElementById("repo").value
+
+fetch("/scan?repo="+repo)
+.then(res => res.text())
+.then(data => {
+document.getElementById("result").textContent = data
+})
+
+}
+
+</script>
+
+</body>
+</html>
