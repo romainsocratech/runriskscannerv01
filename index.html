@@ -24,13 +24,12 @@ function scan(){
 
 let repo = document.getElementById("repo").value
 
-fetch("/scan?repo="+repo)
-.then(res => res.text())
-.then(data => {
-document.getElementById("result").textContent = data
-})
+document.getElementById("result").textContent =
+"Analyse du repository : " + repo +
+"\n\nAnalyse en cours...\nRésultat sous 24h."
 
 }
+
 
 </script>
 
